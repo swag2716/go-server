@@ -17,6 +17,8 @@ func Connect() {
 	if err != nil {
 		fmt.Println("Connection not established")
 		panic(err)
+	} else {
+		fmt.Println("Connection with my database is established")
 	}
 
 	db = d
