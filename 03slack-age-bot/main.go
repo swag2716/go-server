@@ -8,6 +8,7 @@ import (
 	"strconv"
 
 	"github.com/shomali11/slacker"
+	"github.com/swapnika/slack-age-bot/config"
 )
 
 func printCommandEvents(analyticsChannl <-chan *slacker.CommandEvent) {
@@ -22,8 +23,8 @@ func printCommandEvents(analyticsChannl <-chan *slacker.CommandEvent) {
 }
 
 func main() {
-	os.Setenv("SLACK_BOT_TOKEN", "xoxb-4678264186740-5014276170422-EpiROIlGerxzw1SHJ9M6bFgk")
-	os.Setenv("SLACK_APP_TOKEN", "xapp-1-A050LPT9GCS-5017867641333-0ace7053bef1d94fe2e683709dacb2a428087b7a55bec50ea9f817e7f40a42ea")
+	os.Setenv("SLACK_BOT_TOKEN", "xoxb-4678264186740-5014276170422-"+config.Botkey())
+	os.Setenv("SLACK_APP_TOKEN", "xapp-1-A050LPT9GCS-5017867641333-"+config.Appkey())
 
 	bot := slacker.NewClient(os.Getenv("SLACK_BOT_TOKEN"), os.Getenv("SLACK_APP_TOKEN"))
 
